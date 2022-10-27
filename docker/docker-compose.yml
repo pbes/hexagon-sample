@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  hexagon-sample-db:
+    image: 'mysql/mysql-server:8.0'
+    container_name: hexagon-sample-db
+    hostname: hexagon-sample-db
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Password1'
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: 'hexagon-sample-db'
+      MYSQL_USER: 'dev1'
+      MYSQL_PASSWORD: 'Password1'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - 'hexagon-sample-db-data:/var/lib/mysql'
+volumes:
+  hexagon-sample-db-data:
