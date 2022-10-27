@@ -26,7 +26,6 @@ public class PlaceController {
     }
 
     @GetMapping("/places")
-    @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<List<PlaceDTO>> findPlaces() {
         var placeList = convertToPlaceDTOList(placeService.getAllPlaces());
